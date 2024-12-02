@@ -80,11 +80,11 @@ data_em
 data_em <- as.data.frame(data_em[,-1])
 data_em$N
 
-tuneRF(data_em[,-29], y = data_em[,29])
+tuneRF(data_em[,-33], y = data_em[,33])
 res_rf_em <- randomForest(N ~., 
                           data = data_em, 
                           ntree = 8000, 
-                          mtry = 5,
+                          mtry = 20,
                           importance = T,
                           keep.inbag = T,
                           keep.forest = T)
